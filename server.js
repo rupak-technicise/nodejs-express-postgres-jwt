@@ -26,6 +26,9 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
 
+const postRoutes = require("./app/routes/post.routes");
+app.use("/api/posts", postRoutes);
+
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);
 
